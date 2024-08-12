@@ -5,7 +5,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
   return (
-    <div className=" bg-slate-200">
+    <div className=" bg-slate-200 fixed w-full">
       <div className="mx-[5%] flex justify-between">
         <div className="flex justify-center items-center font-bold md:text-3xl">
           <Link to="/">e-SHOP</Link>

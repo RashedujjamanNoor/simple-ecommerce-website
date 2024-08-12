@@ -42,7 +42,7 @@ const InfoSection = () => {
       {infoItems.map((item, index) => (
         <div
           key={index}
-          className="border-2 shadow-md rounded-md p-2 flex flex-col justify-center items-center hover:scale-105 duration-100 cursor-pointer"
+          className="border-2 shadow-md rounded-md p-2 flex flex-col justify-center items-center hover:scale-105 duration-100 cursor-pointer m-1"
         >
           <div className="text-2xl">{item.icon}</div>
           <div className="font-semibold">{item.title}</div>
