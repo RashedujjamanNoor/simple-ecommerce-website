@@ -15,8 +15,6 @@ const Shop = () => {
       });
   };
 
-  console.log(data);
-
   useEffect(() => {
     fetchData();
   }, []);

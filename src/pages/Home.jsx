@@ -1,4 +1,3 @@
-import React from "react";
 import hero from "../assets/images/hero.svg";
 import InfoSection from "../components/InfoSection";
 import Trending from "../components/Trending";
