@@ -17,6 +17,18 @@ const Trending = () => {
       img: women,
       title: "MEN",
     },
+    {
+      img: women,
+      title: "WOMEN",
+    },
+    {
+      img: men,
+      title: "MEN",
+    },
+    {
+      img: women,
+      title: "MEN",
+    },
   ];
   return (
     <div className="flex flex-col justify-center items-center my-3 gap-2">
