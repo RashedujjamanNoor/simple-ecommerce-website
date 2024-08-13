@@ -21,7 +21,7 @@ const Navbar = () => {
           <IoSearch className="text-xl cursor-pointer" />
         </div>
         <div className="flex justify-center items-center gap-2">
-          <Link>
+          <Link to="/cart">
             <IoCartOutline className="text-2xl font-bold" />
           </Link>
           <button className="font-semibold">LogIn | Register</button>

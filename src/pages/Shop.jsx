@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { IoStarHalf } from "react-icons/io5";
 import { IoIosBasket } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { add } from "../feature/cartSlice";
 
 const Shop = () => {
   const [data, setData] = useState();
@@ -18,6 +20,12 @@ const Shop = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(add(item));
+  };
 
   return (
     <div className="mx-[5%]">
@@ -39,6 +47,7 @@ const Shop = () => {
                 />
                 <div className="flex justify-between items-center mt-2 font-bold">
                   <div>
+                    <h1>Price: $ {item.reviewCount}</h1>
                     <h1>{item.name} </h1>
                     <div className="flex  justify-start items-center font-bold">
                       <IoStarHalf className="text-red-400" />
@@ -50,7 +59,10 @@ const Shop = () => {
                     </div>
                   </div>
                   <div>
-                    <button className="text-white text-xl bg-blue-600 py-2 px-4 rounded-lg hover:scale-105 duration-150">
+                    <button
+                      className="text-white text-xl bg-blue-600 py-2 px-4 rounded-lg hover:scale-105 duration-150"
+                      onClick={() => handleAddToCart(item)}
+                    >
                       <IoIosBasket />
                     </button>
                   </div>
