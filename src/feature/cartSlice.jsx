@@ -4,6 +4,7 @@ const initialState = {
   cartItem: [],
   totalQuantity: 0,
   totalAmount: 0,
+  totalItem: 0,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -14,12 +15,14 @@ const cartSlice = createSlice({
       const existingItem = state.cartItem.find(
         (item) => item.id === newItem.id
       );
+
       state.totalQuantity++;
 
       if (!existingItem) {
         state.cartItem.push(action.payload);
         newItem.quantity = 1;
         newItem.singleTotal = newItem.reviewCount;
+        state.totalItem++;
       } else {
         existingItem.quantity++;
         existingItem.singleTotal =
@@ -33,13 +36,34 @@ const cartSlice = createSlice({
       );
     },
 
-    remove(state, action) {
+    deleteOne(state, action) {
       const id = action.payload.id;
       const existingId = state.cartItem.find((item) => item.id === id);
-      state.totalQuantity--;
+
+      if (existingId.quantity === 1) {
+        state.totalQuantity--;
+        state.totalAmount = state.totalAmount - existingId.reviewCount;
+        state.totalItem--;
+        state.cartItem = state.cartItem.filter((item) => item.id !== id);
+      } else {
+        state.totalQuantity--;
+        existingId.quantity--;
+        state.totalAmount = state.totalAmount - existingId.reviewCount;
+        existingId.singleTotal =
+          existingId.singleTotal - existingId.reviewCount;
+      }
+    },
+
+    remove(state, action) {
+      const newItem = action.payload;
+      const existingId = state.cartItem.find((item) => item.id === newItem.id);
+      state.totalQuantity = state.totalQuantity - newItem.quantity;
+      state.totalItem--;
 
       if (existingId) {
-        state.cartItem = state.cartItem.filter((item) => item.id !== id);
+        state.cartItem = state.cartItem.filter(
+          (item) => item.id !== newItem.id
+        );
       } else {
         console.log("mui");
       }
@@ -52,5 +76,5 @@ const cartSlice = createSlice({
     },
   },
 });
-export const { add, remove } = cartSlice.actions;
+export const { add, remove, deleteOne } = cartSlice.actions;
 export default cartSlice.reducer;

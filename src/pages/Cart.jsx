@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { remove } from "../feature/cartSlice";
+import { deleteOne, add } from "../feature/cartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -9,6 +10,14 @@ const Cart = () => {
   const handleRemove = (id) => {
     dispatch(remove(id));
   };
+
+  const handleDelete = (item) => {
+    dispatch(deleteOne(item));
+  };
+  const handleAddToCart = (item) => {
+    dispatch(add(item));
+  };
+
   return (
     <>
       <section className="bg-slate-100 py-8 antialiased md:py-16">
@@ -36,6 +45,7 @@ const Cart = () => {
                         <div className="flex items-center justify-between md:order-3 md:justify-end">
                           <div className="flex items-center">
                             <button
+                              onClick={() => handleDelete(item)}
                               type="button"
                               id="decrement-button"
                               data-input-counter-decrement="counter-input"
@@ -45,6 +55,7 @@ const Cart = () => {
                             </button>
                             <h1>{item.quantity}</h1>
                             <button
+                              onClick={() => handleAddToCart(item)}
                               type="button"
                               id="increment-button"
                               data-input-counter-increment="counter-input"
