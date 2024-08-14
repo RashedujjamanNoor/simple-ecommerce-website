@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";

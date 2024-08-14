@@ -1,4 +1,3 @@
-import React from "react";
 import women from "../assets/images/womens.svg";
 import men from "../assets/images/men.svg";
 import { Link } from "react-router-dom";

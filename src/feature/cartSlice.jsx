@@ -1,10 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const cartItem =
+  localStorage.getItem("cartItem") !== null
+    ? JSON.parse(localStorage.getItem("cartItem"))
+    : [];
+const totalQuantity = JSON.parse(localStorage.getItem("totalQuantity"));
+const totalAmount = JSON.parse(localStorage.getItem("totalAmount"));
+const totalItem = JSON.parse(localStorage.getItem("totalItem"));
+
 const initialState = {
-  cartItem: [],
-  totalQuantity: 0,
-  totalAmount: 0,
-  totalItem: 0,
+  cartItem: cartItem,
+  totalQuantity: totalQuantity,
+  totalAmount: totalAmount,
+  totalItem: totalItem,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -34,6 +42,13 @@ const cartSlice = createSlice({
           total + Number(item.reviewCount) * Number(item.quantity),
         0
       );
+      localStorage.setItem("cartItem", JSON.stringify(state.cartItem));
+      localStorage.setItem(
+        "totalQuantity",
+        JSON.stringify(state.totalQuantity)
+      );
+      localStorage.setItem("totalAmount", JSON.stringify(state.totalAmount));
+      localStorage.setItem("totalItem", JSON.stringify(state.totalItem));
     },
 
     deleteOne(state, action) {
@@ -52,6 +67,13 @@ const cartSlice = createSlice({
         existingId.singleTotal =
           existingId.singleTotal - existingId.reviewCount;
       }
+      localStorage.setItem("cartItem", JSON.stringify(state.cartItem));
+      localStorage.setItem(
+        "totalQuantity",
+        JSON.stringify(state.totalQuantity)
+      );
+      localStorage.setItem("totalAmount", JSON.stringify(state.totalAmount));
+      localStorage.setItem("totalItem", JSON.stringify(state.totalItem));
     },
 
     remove(state, action) {
@@ -73,6 +95,13 @@ const cartSlice = createSlice({
           total + Number(item.reviewCount) * Number(item.quantity),
         0
       );
+      localStorage.setItem("cartItem", JSON.stringify(state.cartItem));
+      localStorage.setItem(
+        "totalQuantity",
+        JSON.stringify(state.totalQuantity)
+      );
+      localStorage.setItem("totalAmount", JSON.stringify(state.totalAmount));
+      localStorage.setItem("totalItem", JSON.stringify(state.totalItem));
     },
   },
 });

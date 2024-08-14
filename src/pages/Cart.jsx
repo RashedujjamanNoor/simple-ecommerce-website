@@ -49,22 +49,22 @@ const Cart = () => {
                               type="button"
                               id="decrement-button"
                               data-input-counter-decrement="counter-input"
-                              className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                             >
                               -
                             </button>
-                            <h1>{item.quantity}</h1>
+                            <h1 className="mx-2 text-white">{item.quantity}</h1>
                             <button
                               onClick={() => handleAddToCart(item)}
                               type="button"
                               id="increment-button"
                               data-input-counter-increment="counter-input"
-                              className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                             >
                               +
                             </button>
                           </div>
-                          <div className="text-end md:order-4 md:w-32">
+                          <div className="text-end md:order-4 md:w-32 ">
                             <p className="text-base font-bold text-gray-900 dark:text-white">
                               ${item.singleTotal}
                             </p>
