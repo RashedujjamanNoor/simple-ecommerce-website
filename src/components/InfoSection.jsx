@@ -12,30 +12,16 @@ const InfoSection = () => {
     },
     {
       icon: <FaHeadset />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
+      title: "24/7 Support",
+      description: "Got a question or need help with your order? Our customer support team is available 24/7 to assist you anytime, day or night.",
     },
     {
       icon: <FaRegMoneyBillAlt />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
+      title: "Cash on Delivery",
+      description: "Pay in cash when your order arrives — simple and secure.",
     },
 
-    {
-      icon: <FaLock />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
-    },
-    {
-      icon: <FaLock />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
-    },
-    {
-      icon: <FaLock />,
-      title: "Free Shipping",
-      description: "Get your orders delivered with no extra cost",
-    },
+    
   ];
   return (
     <div className="grid grid-cols-3 mt-4 gap-2">

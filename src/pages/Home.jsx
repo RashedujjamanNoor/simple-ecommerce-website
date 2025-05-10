@@ -9,7 +9,7 @@ const Home = () => {
         <img src={hero} alt="" className="mt-2" />
       </div>
       <InfoSection />
-      <Trending />
+      
     </div>
   );
 };
