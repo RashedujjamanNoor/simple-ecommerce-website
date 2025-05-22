@@ -35,7 +35,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-center items-center gap-6 p-2 font-bold  text-slate-800">
         <Link to="/">Home</Link>
-        <Link to="/shop">Foods</Link>
+        <Link to="/food">Foods</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/about">About</Link>
       </div>

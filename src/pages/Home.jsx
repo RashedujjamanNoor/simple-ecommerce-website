@@ -1,6 +1,6 @@
 import hero from "../assets/images/hero.svg";
 import InfoSection from "../components/InfoSection";
-import Trending from "../components/Trending";
+import Popular from "../components/Popular";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
         <img src={hero} alt="" className="mt-2" />
       </div>
       <InfoSection />
-      <Trending/>
+      <Popular/>
     </div>
   );
 };

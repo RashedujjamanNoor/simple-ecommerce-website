@@ -4,7 +4,7 @@ import { IoIosBasket } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { add } from "../feature/cartSlice";
 
-const Shop = () => {
+const Food = () => {
   const [data, setData] = useState();
   const fetchData = async () => {
     await fetch("https://dummyjson.com/recipes")
@@ -73,4 +73,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Food;

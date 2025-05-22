@@ -8,7 +8,7 @@ import { IoIosBasket } from "react-icons/io";
 import { add } from "../feature/cartSlice";
 import { Link } from "react-router-dom";
 
-const Trending = () => {
+const Popular = () => {
   const [data, setData] = useState();
   const fetchData = async () => {
     await fetch("https://dummyjson.com/recipes?limit=10&skip=0")
@@ -31,7 +31,7 @@ const Trending = () => {
 
   return (
     <div className="flex flex-col justify-center items-center my-3 gap-2">
-      <h1 className="font-bold text-gray-800 border-b-2">Trending</h1>
+      <h1 className="font-bold text-2xl md:text-4xl mt-8 text-gray-800 border-b-2">Popular Recipes</h1>
       {/* <div className="flex flex-col justify-evenly items-center gap-5">
         {items.map((item, index) => (
           <div
@@ -87,10 +87,10 @@ const Trending = () => {
                 ))}
             </div>
        <div >
-        <button className="text-white text-xl bg-blue-600 py-2 px-4 rounded-lg hover:scale-105 duration-150"><Link to="shop">More...</Link></button>
+        <button className="text-white text-xl bg-blue-600 py-2 px-4 rounded-lg hover:scale-105 duration-150"><Link to="food">More...</Link></button>
         </div>      
     </div>
   );
 };
 
-export default Trending;
+export default Popular;
