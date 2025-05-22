@@ -24,7 +24,7 @@ const InfoSection = () => {
     
   ];
   return (
-    <div className="grid grid-cols-3 mt-4 gap-2">
+    <div className="grid grid-cols-1 md:grid-cols-3 mt-4 gap-2 ">
       {infoItems.map((item, index) => (
         <div
           key={index}
